@@ -25,13 +25,6 @@ observer.elevation = float(sys.argv[3])
 observer.date = str(sys.argv[4]+" "+sys.argv[5])
 moon = ephem.Moon(observer)
 sun = ephem.Sun(observer)
-#print(observer.lat)
-#print(observer.lon)
-#print(observer.elevation)
-#print(observer.date)
-
-#altmoon = moon.alt 
-#azmoon = moon.az 
 ramoon = moon.ra
 decmoon = moon.dec
 siderealtime = observer.sidereal_time()
@@ -46,7 +39,6 @@ print("The position-angle of the moon's bright limb in the equatorial coordinate
 moonradius = ((moon.size/3600)/2)*(math.pi/180)
 decmoonnorth = decmoon + moonradius
 altnorth, aznorth = equatorial_to_horizon(decmoonnorth, hourangle, observer.lat)
-#print((altnorth * 180/math.pi), (aznorth * 180/math.pi))
 fieldrotation = position_angle(azmoon, altmoon, aznorth, altnorth)
 print("The field rotation of the moon in the altitude/azimuth coordinate system was:", fieldrotation * 180/math.pi, "degrees.")
 moonorient = (posangle+(math.radians(90))) - fieldrotation
