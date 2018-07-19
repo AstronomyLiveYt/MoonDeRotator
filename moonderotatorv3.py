@@ -12,7 +12,8 @@ def equatorial_to_horizon(dec, H, lat):
     return(alt, az)
 
 def position_angle(alpha1, sigma1, alpha2, sigma2):
-    positionangle = math.atan2((math.cos(sigma2)*math.sin(alpha2-alpha1)),(math.cos(sigma1)*math.sin(sigma2)-math.sin(sigma1)*math.cos(sigma2)*math.cos(alpha2-alpha1)))
+    positionangle = math.atan2((math.cos(sigma2)*math.sin(alpha2-alpha1)),
+    (math.cos(sigma1)*math.sin(sigma2)-math.sin(sigma1)*math.cos(sigma2)*math.cos(alpha2-alpha1)))
     return(positionangle)
 
 observer = ephem.Observer()
@@ -54,4 +55,4 @@ if len(sys.argv) > 6:
     cv2.imshow("De-rotated", rotated)
     cv2.imshow("Original", image)
     cv2.waitKey(0)
-    cv2.destroyAllWindows()  
+    cv2.destroyAllWindows()
