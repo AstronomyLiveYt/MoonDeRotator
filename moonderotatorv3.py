@@ -1,10 +1,7 @@
 import ephem
 import cv2
-import numpy as np
-import pandas as pd
 import sys
 import math
-import time
 import imutils
 
 def equatorial_to_horizon(dec, H, lat):
