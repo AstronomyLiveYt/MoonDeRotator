@@ -43,7 +43,7 @@ altnorth, aznorth = equatorial_to_horizon(decmoonnorth, hourangle, observer.lat)
 fieldrotation = position_angle(azmoon, altmoon, aznorth, altnorth)
 print("The field rotation of the moon in the altitude/azimuth coordinate system was: %.2f" % (fieldrotation * 180/math.pi), "degrees.")
 moonorient = (posangle+(math.radians(90))) - fieldrotation
-if moonorient > math.radians(180):
+if moonorient > math.radians(90):
     moonorient = moonorient - math.radians(180)
 print("Rotate the moon by %.2f" % (moonorient * 180/math.pi), "degrees to return it to a vertical orientation.")
 if len(sys.argv) > 6:
